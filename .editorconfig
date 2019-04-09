@@ -38,12 +38,11 @@ indent_size = 2
 
 
 [*.{cs,csx,cake}]
-charset                  = utf-8-bom
-
+charset = utf-8-bom
 
 
 # -----------------------------------------------------------------------------
-# -- .NET Coding Conventions  (https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference)
+# -- .NET Coding Conventions 
 
 # this. and Me. preferences
 dotnet_style_qualification_for_event = false:warning
@@ -129,7 +128,7 @@ csharp_style_unused_value_expression_statement_preference = discard_variable:sil
 
 
 # -----------------------------------------------------------------------------
-# -- C# / .net Formatting Rules
+# -- C# / .Net Formatting Rules
 
 # Organize usings
 dotnet_sort_system_directives_first = true
@@ -182,7 +181,7 @@ csharp_preserve_single_line_statements = false
 
 
 # -----------------------------------------------------------------------------
-# -- Naming Conventions (https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-naming-conventions?view=vs-2017)
+# -- Naming Conventions
 
 # In general a "naming convention" has these three properties:
 # dotnet_naming_rule.<namingRuleTitle>.severity                     = none or silent, suggestion, warning, or error
@@ -202,262 +201,116 @@ csharp_preserve_single_line_statements = false
 
 
 # --------------------------------------------------------------------------------
-# Styles (Global)
-
-## camel_case_style
-#dotnet_naming_style.camel_case_style.capitalization = camel_case
-#
-## pascal_case_style
-#dotnet_naming_style.pascal_case_style.capitalization = pascal_case
-#
-## camel_case_with_undescore_prefix_style
-#dotnet_naming_style.camel_case_with_undescore_prefix_style.capitalization = camel_case
-#dotnet_naming_style.camel_case_with_undescore_prefix_style.required_prefix = _
-#
-## camel_case_with_s_underscore_prefix_style
-#dotnet_naming_style.camel_case_with_s_underscore_prefix_style.capitalization = camel_case
-#dotnet_naming_style.camel_case_with_s_underscore_prefix_style.required_prefix = s_
-#
-## pascal_case_with_async_suffix_style
-#dotnet_naming_style.pascal_case_with_async_suffix_style.capitalization = pascal_case
-#dotnet_naming_style.pascal_case_with_async_suffix_style.required_suffix = Async
-#
-## pascal_case_with_i_prefix_style
-#dotnet_naming_style.pascal_case_with_i_prefix_style.capitalization = pascal_case
-#dotnet_naming_style.pascal_case_with_i_prefix_style.required_prefix = I
-
-
-
-
-
-# --------------------------------------------------------------------------------
-# Symbols (Global)
-
-## interface_symbols
-#dotnet_naming_symbols.interface_symbols.applicable_kinds = interface
-#
-## parameters_locals_symbols
-#dotnet_naming_symbols.parameters_locals_symbols.applicable_kinds = parameter, local
-#
-## constants_symbols
-#dotnet_naming_symbols.constants_symbols.applicable_kinds = field, local
-#dotnet_naming_symbols.constants_symbols.required_modifiers = const
-#
-## non_private_static_fields_symbols
-#dotnet_naming_symbols.non_private_static_fields_symbols.applicable_kinds = field
-#dotnet_naming_symbols.non_private_static_fields_symbols.applicable_accessibilities = public, protected, internal, protected internal, private protected
-#dotnet_naming_symbols.non_private_static_fields_symbols.required_modifiers = static
-#
-## non_private_readonly_fields_symbols
-#dotnet_naming_symbols.non_private_readonly_fields_symbols.applicable_kinds = field
-#dotnet_naming_symbols.non_private_readonly_fields_symbols.applicable_accessibilities = public, protected, internal, protected internal, private protected
-#dotnet_naming_symbols.non_private_readonly_fields_symbols.required_modifiers = readonly
-#
-## static_fields_symbols
-#dotnet_naming_symbols.static_fields_symbols.applicable_kinds = field
-#dotnet_naming_symbols.static_fields_symbols.required_modifiers = static
-#
-## fields_symbols
-#dotnet_naming_symbols.fields_symbols.applicable_kinds = field
-#
-## local_function_symbols
-#dotnet_naming_symbols.local_function_symbols.applicable_kinds = local_function
-#
-## all_applicable_kinds_symbols
-#dotnet_naming_symbols.all_applicable_kinds_symbols.applicable_kinds = *
-
-
-# --------------------------------------------------------------------------------
 # Rules
 
-# The first matching rule wins, more specific rules at the top
-
-
 # Interface must start with an "I" prefix
-dotnet_naming_rule.rule_01.severity = error
-dotnet_naming_rule.rule_01.symbols = symbols_01
-dotnet_naming_rule.rule_01.style = style_01
+dotnet_naming_rule.rule_01.severity                         = error
+dotnet_naming_rule.rule_01.symbols                          = symbols_01
+dotnet_naming_rule.rule_01.style                            = style_01
 
-dotnet_naming_symbols.symbols_01.applicable_kinds = interface
+dotnet_naming_symbols.symbols_01.applicable_kinds           = interface
 
-dotnet_naming_style.style_01.capitalization = pascal_case
-dotnet_naming_style.style_01.required_prefix = I
+dotnet_naming_style.style_01.capitalization                 = pascal_case
+dotnet_naming_style.style_01.required_prefix                = I
 
 
 # Non-private static fields are PascalCase
-dotnet_naming_rule.rule_02.severity = error
-dotnet_naming_rule.rule_02.symbols = symbols_02
-dotnet_naming_rule.rule_02.style = style_02
+dotnet_naming_rule.rule_02.severity                         = error
+dotnet_naming_rule.rule_02.symbols                          = symbols_02
+dotnet_naming_rule.rule_02.style                            = style_02
 
-dotnet_naming_symbols.symbols_02.applicable_kinds = field
+dotnet_naming_symbols.symbols_02.applicable_kinds           = field
 dotnet_naming_symbols.symbols_02.applicable_accessibilities = public, protected, internal, protected internal, private protected
-dotnet_naming_symbols.symbols_02.required_modifiers = static
+dotnet_naming_symbols.symbols_02.required_modifiers         = static
 
-dotnet_naming_style.style_02.capitalization = pascal_case
+dotnet_naming_style.style_02.capitalization                 = pascal_case
 
 
 # Non-private readonly fields are PascalCase
-dotnet_naming_rule.rule_03.severity = error
-dotnet_naming_rule.rule_03.symbols = symbols_03
-dotnet_naming_rule.rule_03.style = style_03
+dotnet_naming_rule.rule_03.severity                         = error
+dotnet_naming_rule.rule_03.symbols                          = symbols_03
+dotnet_naming_rule.rule_03.style                            = style_03
 
-dotnet_naming_symbols.symbols_03.applicable_kinds = field
+dotnet_naming_symbols.symbols_03.applicable_kinds           = field
 dotnet_naming_symbols.symbols_03.applicable_accessibilities = public, protected, internal, protected internal, private protected
-dotnet_naming_symbols.symbols_03.required_modifiers = readonly
+dotnet_naming_symbols.symbols_03.required_modifiers         = readonly
 
-dotnet_naming_style.style_03.capitalization = pascal_case
+dotnet_naming_style.style_03.capitalization                 = pascal_case
 
 
 # Constants are PascalCase
-dotnet_naming_rule.rule_04.severity = error
-dotnet_naming_rule.rule_04.symbols = symbols_04
-dotnet_naming_rule.rule_04.style = style_04
+dotnet_naming_rule.rule_04.severity                         = error
+dotnet_naming_rule.rule_04.symbols                          = symbols_04
+dotnet_naming_rule.rule_04.style                            = style_04
 
-dotnet_naming_symbols.symbols_04.applicable_kinds = field, local
-dotnet_naming_symbols.symbols_04.required_modifiers = const
+dotnet_naming_symbols.symbols_04.applicable_kinds           = field, local
+dotnet_naming_symbols.symbols_04.required_modifiers         = const
 
-dotnet_naming_style.style_04.capitalization = pascal_case
+dotnet_naming_style.style_04.capitalization                 = pascal_case
 
 
 # Private static fields are camelCase and start with s_
-dotnet_naming_rule.rule_05.severity = error
-dotnet_naming_rule.rule_05.symbols = symbols_05
-dotnet_naming_rule.rule_05.style = style_05
+dotnet_naming_rule.rule_05.severity                         = error
+dotnet_naming_rule.rule_05.symbols                          = symbols_05
+dotnet_naming_rule.rule_05.style                            = style_05
 
 dotnet_naming_symbols.symbols_05.applicable_accessibilities = private
-dotnet_naming_symbols.symbols_05.applicable_kinds = field
-dotnet_naming_symbols.symbols_05.required_modifiers = static
+dotnet_naming_symbols.symbols_05.applicable_kinds           = field
+dotnet_naming_symbols.symbols_05.required_modifiers         = static
 
-dotnet_naming_style.style_05.capitalization = camel_case
-dotnet_naming_style.style_05.required_prefix = s_
+dotnet_naming_style.style_05.capitalization                 = camel_case
+dotnet_naming_style.style_05.required_prefix                = s_
 
 
 # Private and internal fields are camelCase and start with _
-dotnet_naming_rule.rule_06.severity = error
-dotnet_naming_rule.rule_06.symbols = symbols_06
-dotnet_naming_rule.rule_06.style = style_06
+dotnet_naming_rule.rule_06.severity                         = error
+dotnet_naming_rule.rule_06.symbols                          = symbols_06
+dotnet_naming_rule.rule_06.style                            = style_06
 
 dotnet_naming_symbols.symbols_06.applicable_accessibilities = private, internal
-dotnet_naming_symbols.symbols_06.applicable_kinds = field
+dotnet_naming_symbols.symbols_06.applicable_kinds           = field
 
-dotnet_naming_style.style_06.capitalization = camel_case
-dotnet_naming_style.style_06.required_prefix = _
+dotnet_naming_style.style_06.capitalization                 = camel_case
+dotnet_naming_style.style_06.required_prefix                = _
 
 
 # Locals and parameters are camelCase
-dotnet_naming_rule.rule_07.severity = error
-dotnet_naming_rule.rule_07.symbols = symbols_07
-dotnet_naming_rule.rule_07.style = style_07
+dotnet_naming_rule.rule_07.severity                         = error
+dotnet_naming_rule.rule_07.symbols                          = symbols_07
+dotnet_naming_rule.rule_07.style                            = style_07
 
-dotnet_naming_symbols.symbols_07.applicable_kinds = local, parameter
+dotnet_naming_symbols.symbols_07.applicable_kinds           = local, parameter
 
-dotnet_naming_style.style_07.capitalization = camel_case
+dotnet_naming_style.style_07.capitalization                 = camel_case
 
 
 # Local functions are PascalCase
-dotnet_naming_rule.rule_08.severity = error
-dotnet_naming_rule.rule_08.symbols = symbols_08
-dotnet_naming_rule.rule_08.style = style_08
+dotnet_naming_rule.rule_08.severity                         = error
+dotnet_naming_rule.rule_08.symbols                          = symbols_08
+dotnet_naming_rule.rule_08.style                            = style_08
 
-dotnet_naming_symbols.symbols_08.applicable_kinds = local_function
+dotnet_naming_symbols.symbols_08.applicable_kinds           = local_function
 
-dotnet_naming_style.style_08.capitalization = pascal_case
+dotnet_naming_style.style_08.capitalization                 = pascal_case
 
 
 # Async methods ends with Async suffix
-dotnet_naming_rule.rule_10.severity = error
-dotnet_naming_rule.rule_10.symbols = symbols_10
-dotnet_naming_rule.rule_10.style = style_10
+dotnet_naming_rule.rule_09.severity                         = error
+dotnet_naming_rule.rule_09.symbols                          = symbols_09
+dotnet_naming_rule.rule_09.style                            = style_09
 
-dotnet_naming_symbols.symbols_10.applicable_kinds                    = method
-dotnet_naming_symbols.symbols_10.required_modifiers                  = async
+dotnet_naming_symbols.symbols_09.applicable_kinds           = method
+dotnet_naming_symbols.symbols_09.required_modifiers         = async
 
-dotnet_naming_style.style_10.capitalization                    = pascal_case
-dotnet_naming_style.style_10.required_suffix                   = Async
+dotnet_naming_style.style_09.capitalization                 = pascal_case
+dotnet_naming_style.style_09.required_suffix                = Async
 
 
 # PascalCase by default
-dotnet_naming_rule.rule_09.severity = error
-dotnet_naming_rule.rule_09.symbols = symbols_09
-dotnet_naming_rule.rule_09.style = style_09
+dotnet_naming_rule.rule_10.severity                         = error
+dotnet_naming_rule.rule_10.symbols                          = symbols_10
+dotnet_naming_rule.rule_10.style                            = style_10
 
-dotnet_naming_symbols.symbols_09.applicable_kinds = namespace, class, struct, interface, enum, property, method, event, delegate
+dotnet_naming_symbols.symbols_10.applicable_kinds           = namespace, class, struct, interface, enum, property, method, event, delegate
 
-dotnet_naming_style.style_09.capitalization = pascal_case
-
-
-
-
-# https://github.com/dotnet/roslyn/blob/master/.editorconfig
-# https://github.com/IdentityServer/IdentityServer4/blob/master/.editorconfig
-# https://github.com/dotnet/coreclr/blob/master/.editorconfig
-# https://github.com/nunit/nunit/blob/master/.editorconfig
-# https://github.com/nopara73/Socks5ProtocolTinkering/blob/master/.editorconfig
-
-# Name all constant fields using PascalCase
-#dotnet_naming_rule.constant_fields_should_be_pascal_case.severity        = warning
-#dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols         = constant_fields
-#dotnet_naming_rule.constant_fields_should_be_pascal_case.style           = pascal_case_style
-
-#dotnet_naming_symbols.constant_fields.applicable_kinds                   = field
-#dotnet_naming_symbols.constant_fields.required_modifiers                 = const
-
-#dotnet_naming_style.pascal_case_style.capitalization                     = pascal_case
-
-
-# Static fields should have _ prefix
-#dotnet_naming_rule.static_fields_should_have_prefix.severity = suggestion
-#dotnet_naming_rule.static_fields_should_have_prefix.symbols  = static_fields
-#dotnet_naming_rule.static_fields_should_have_prefix.style    = static_prefix_style
-
-#dotnet_naming_symbols.static_fields.applicable_kinds   = field
-#dotnet_naming_symbols.static_fields.required_modifiers = static
-
-#dotnet_naming_style.static_prefix_style.required_prefix = _
-#dotnet_naming_style.static_prefix_style.capitalization = camel_case
-
-
-# Internal and private fields should be _camelCase
-#dotnet_naming_rule.camel_case_for_private_internal_fields.severity       = warning
-#dotnet_naming_rule.camel_case_for_private_internal_fields.symbols        = private_internal_fields
-#dotnet_naming_rule.camel_case_for_private_internal_fields.style          = camel_case_underscore_style
-
-#dotnet_naming_symbols.private_internal_fields.applicable_kinds           = field
-#dotnet_naming_symbols.private_internal_fields.applicable_accessibilities = private, internal
-
-#dotnet_naming_style.camel_case_underscore_style.required_prefix          = _
-#dotnet_naming_style.camel_case_underscore_style.capitalization           = camel_case
-
-
-# Public members must be capitalized
-#dotnet_naming_rule.public_members_must_be_capitalized.severity           = warning
-#dotnet_naming_rule.public_members_must_be_capitalized.symbols            = public_symbols
-#dotnet_naming_rule.public_members_must_be_capitalized.style              = first_word_upper_case_style
-
-#dotnet_naming_symbols.public_symbols.applicable_kinds                    = property, method, field, event, delegate
-#dotnet_naming_symbols.public_symbols.applicable_accessibilities          = public, internal, protected, protected_internal
-
-#dotnet_naming_style.first_word_upper_case_style.capitalization           = first_word_upper
-
-
-# Async methods end in Async
-#dotnet_naming_rule.async_methods_must_end_with_async.severity            = warning
-#dotnet_naming_rule.async_methods_must_end_with_async.symbols             = method_symbols
-#dotnet_naming_rule.async_methods_must_end_with_async.style               = end_in_async_style
-
-#dotnet_naming_symbols.method_symbols.applicable_kinds                    = method
-#dotnet_naming_symbols.method_symbols.required_modifiers                  = async
-
-#dotnet_naming_style.end_in_async_style.capitalization                    = pascal_case
-#dotnet_naming_style.end_in_async_style.required_suffix                   = Async
-
-
-# Non-public members must be lower-case
-# dotnet_naming_rule.non_public_members_must_be_lower_case.severity        = warning
-# dotnet_naming_rule.non_public_members_must_be_lower_case.symbols         = non_public_symbols
-# dotnet_naming_rule.non_public_members_must_be_lower_case.style           = all_lower_case_style
-
-# dotnet_naming_symbols.non_public_symbols.applicable_kinds                = property, method, field, event, delegate
-# dotnet_naming_symbols.non_public_symbols.applicable_accessibilities      = private
-
-# dotnet_naming_style.all_lower_case_style.capitalization
+dotnet_naming_style.style_10.capitalization                 = pascal_case
