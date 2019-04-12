@@ -1,0 +1,12 @@
+{
+    "default": true,
+    "MD012": {
+        "maximum": 3
+    },
+    "MD013": {
+        "line_length": 80,
+        "tables": false,
+        "code_blocks": false,
+        "headers": false
+    }
+}
